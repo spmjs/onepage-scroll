@@ -407,5 +407,13 @@
   }
 
 
-}(window.jQuery);
+}(
+  (function() {
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+      return require('jquery');
+    } else {
+      return window.jQuery;
+    }
+  })()
+);
 
